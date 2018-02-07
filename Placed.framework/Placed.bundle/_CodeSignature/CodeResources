@@ -6,7 +6,7 @@
 	<dict>
 		<key>PlacedOptInViewController.nib</key>
 		<data>
-		4NYRcjNnviS1aqvjgZo+Hlp3UCs=
+		os4W4X4AowQvNjbOYeWtf/WsZH4=
 		</data>
 		<key>PlacedResources-Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>PlacedSurveyViewController.nib</key>
 		<data>
-		XB7Krg7g+v5l/v9kh6Z0RvSYbrA=
+		gu1d4dUcOTILVWgAltUSiJWUdzA=
 		</data>
 		<key>config.json</key>
 		<data>
-		RE0smhuIlSDHo1Hv7HxcryAReCU=
+		T2sC0mhSwGSnAvvWCVXFikkJ/eI=
 		</data>
 		<key>en.lproj/InfoPlist.strings</key>
 		<dict>
@@ -60,11 +60,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4NYRcjNnviS1aqvjgZo+Hlp3UCs=
+			os4W4X4AowQvNjbOYeWtf/WsZH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			5SIkrI5G31q6EkGwUQ7AQEq8hWyhyJq8YbN4AVu1wvo=
+			sIqiOpJs9NhJ+WvfiZGqYaOi14AZOUqphbVI9xE/kxE=
 			</data>
 		</dict>
 		<key>PlacedResources-Info.plist</key>
@@ -82,22 +82,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XB7Krg7g+v5l/v9kh6Z0RvSYbrA=
+			gu1d4dUcOTILVWgAltUSiJWUdzA=
 			</data>
 			<key>hash2</key>
 			<data>
-			RLe7+8jgLhUdiCIE+dio2eJkJ0HRicWp3g7gDOt4pjc=
+			TXcE8Zs13Kk56RJSMY0wP4+pn+SABHAt4euoM/20TPk=
 			</data>
 		</dict>
 		<key>config.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RE0smhuIlSDHo1Hv7HxcryAReCU=
+			T2sC0mhSwGSnAvvWCVXFikkJ/eI=
 			</data>
 			<key>hash2</key>
 			<data>
-			g4CPfntj0Ke9yXmpJXiTHY/tknLMA31vHn4PxCLi2zo=
+			diw4Tys5TEOE1go1IlH1GVjhi+XZiDIzXn+uv9Dcg64=
 			</data>
 		</dict>
 		<key>en.lproj/InfoPlist.strings</key>
