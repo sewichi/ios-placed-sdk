@@ -10,8 +10,10 @@ The SDK has been designed for easy setup and integration with both new and exist
 
 The preferred method for installing the Placed SDK in your app is using CocoaPods. CocoaPods is dependency management system for Objective-C development. You can learn more about it at [http://cocoapods.org/](http://cocoapods.org/).
 
-1. Add the following lines to your project's Podfile
-`pod 'Placed', :git => 'https://github.com/placed/ios-placed-sdk.git'`
+1. Add the following line to your project's Podfile  
+    ```
+    pod 'Placed', :git => 'https://github.com/placed/ios-placed-sdk.git'
+    ```
 
 2. Celebrate!
 
@@ -28,13 +30,18 @@ In addition having a legally compliant privacy policy describing Placed’s coll
     - Buttons to “Accept” or “Cancel” 
 
 
-1. *Prompt for Background Location Permission*  
-Under the “Required background modes” key in your app’s main plist file, you will need to add:  
-    - **App registers for location updates**   
-    - **NSLocationAlwaysAndWhenInUseUsageDescription**
-    - **NSLocationWhenInUseUsageDescription**  
-    - **NSLocationAlwaysUsageDescription**  
-    - **NSLocationUsageDescription**  
+2. *Prompt for Background Location Permission*  
+    Under the “Required background modes” `UIBackgroundModes` key in your app’s main plist file, you will need to add:  
+    ```
+    App registers for location updates
+    ```
+    In addition, you must provide all of the following location usage descriptions in your app's plist:
+    ```
+    NSLocationAlwaysAndWhenInUseUsageDescription
+    NSLocationWhenInUseUsageDescription 
+    NSLocationAlwaysUsageDescription
+    NSLocationUsageDescription
+    ```
 
 For an example of the opt-in dialog and location permission prompt, please refer to the sample app. We have also provided a [gallery for inspiration](./gallery) on how you can better integrate the opt-in experience into your app.
 
