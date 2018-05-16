@@ -8,16 +8,24 @@ The SDK has been designed for easy setup and integration with both new and exist
 
 ## Setup
 
-The preferred method for installing the Placed SDK in your app is using CocoaPods. CocoaPods is dependency management system for Objective-C development. You can learn more about it at [http://cocoapods.org/](http://cocoapods.org/).
+#### Cocoapods
+The preferred method for installing the Placed SDK in your app is [CocoaPods](https://cocoapods.org/), a dependency manager for Cocoa projects. You can install CocoaPods with the following command:
+```
+$ gem install cocoapods
+```
 
-1. Add the following line to your project's Podfile  
-    ```
-    pod 'Placed', :git => 'https://github.com/placed/ios-placed-sdk.git'
-    ```
+To integrate the Placed SDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
+```
+pod 'Placed', :git => 'https://github.com/placed/ios-placed-sdk.git'
+```
+Then, run the following command:
+```
+$ pod install
+```
 
-2. Celebrate!
+#### Manually
 
-If you are not using CocoaPods, you can integrate the Placed.framework and Placed.bundle directly in your project.
+If you are not using CocoaPods, you can integrate [Placed.framework](./Placed.framework) manually into your project.
 
 ## Location Permission
 
@@ -42,12 +50,13 @@ In addition having a legally compliant privacy policy describing Placed’s coll
     NSLocationAlwaysUsageDescription
     NSLocationUsageDescription
     ```
+    
+    **These permissions are very important to the Placed SDK.** If your app does not currently use background location permission, please contact a Placed representative.
 
 For an example of the opt-in dialog and location permission prompt, please refer to the sample app. We have also provided a [gallery for inspiration](./gallery) on how you can better integrate the opt-in experience into your app.
 
-**These permissions are very important to the Placed SDK.** If your app does not currently use background location permission, please contact a Placed representative.
 
-## Integration
+## Usage
 
 1. Add `#import <Placed/PlacedAgent.h>` to your main AppDelegate.
 
