@@ -19,18 +19,26 @@ If you are not using CocoaPods, you can integrate the Placed.framework and Place
 
 ## Location Permission
 
-This SDK requires Apple's background location permission. Under the "Required background modes" key in your app’s main plist file you should make sure to add:
+As outlined in Section 5 of the [Placed Affiliate Agreement](https://affiliate.placed.com/placed-affiliate-agreement/), you must satisfy two requirements prior to registering a user with the Placed SDK:
 
-    App registers for location updates
+1. *Gather Express Consent for User Data Collection via Opt-in Dialog*  
+In addition having a legally compliant privacy policy describing Placed’s collection of location and device information, you must include a discrete opt-in dialog which gathers express consent for data collection. This dialog appears prior to the fine location permission prompt, and includes:  
+    - The language: “*Aggregated device data, including location, is measured for the purposes of market research by Placed, Inc.*”
+    - Links to the Placed [Terms of Service](https://www.placed.com/terms-of-service) and [Privacy Policy](https://www.placed.com/privacy-policy)
+    - Buttons to “Accept” or “Cancel” 
 
-In addition, for iOS 11, you must provide all of the following location usage descriptions in your app's plist:
 
-    NSLocationAlwaysAndWhenInUseUsageDescription
-    NSLocationWhenInUseUsageDescription
-    NSLocationAlwaysUsageDescription
-    NSLocationUsageDescription
+1. *Prompt for Background Location Permission*  
+Under the “Required background modes” key in your app’s main plist file, you will need to add:  
+    - **App registers for location updates**   
+    - **NSLocationAlwaysAndWhenInUseUsageDescription**
+    - **NSLocationWhenInUseUsageDescription**  
+    - **NSLocationAlwaysUsageDescription**  
+    - **NSLocationUsageDescription**  
 
-**These permissions are very important to the Placed SDK. If your app does not currently use background location permission, please contact a Placed representative.**
+For an example of the opt-in dialog and location permission prompt, please refer to the sample app. We have also provided a [gallery for inspiration](./gallery) on how you can better integrate the opt-in experience into your app.
+
+**These permissions are very important to the Placed SDK.** If your app does not currently use background location permission, please contact a Placed representative.
 
 ## Integration
 
@@ -39,7 +47,6 @@ In addition, for iOS 11, you must provide all of the following location usage de
 2. Initialize the agent in your AppDelegate's `application:didFinishLaunchingWithOptions:`.
 
     - Call `[PlacedAgent createWithAppKey:@"<Application Key>" andDelegate:nil];` providing the app key you received from Placed. Optionally, you may provide a `PlacedAgentDelegate` to this method but it is not required.
-    - Next, call `[PlacedAgent startTracking]`. This method must be called on every app start, but will only begin location collection if the user has been registered via the `[PlacedAgent registerUser]` method (see below).
 
 3. Call `[PlacedAgent registerUser]` to register a new user for location collection by the Placed SDK. This method should only be called once in the user's lifecycle. If you have EULA or terms of service that the user is required to accept before tracking, call this method after the user accepts those terms. You may find the method `[PlacedAgent isUserRegistered]` useful for checking if `registerUser` has already been called before.
 

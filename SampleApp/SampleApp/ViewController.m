@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SampleAlertViewController.h"
 #import <Placed/PlacedAgent.h>
 
 @interface ViewController ()
@@ -22,7 +23,11 @@
 
 - (IBAction)registerUser:(id)sender {
     // "Register User" button clicked
-    [PlacedAgent registerUser];
+    if ([NSUserDefaults.standardUserDefaults boolForKey:kTermsAndPolicyAcceptedKey]) {
+        [PlacedAgent registerUser];
+    } else {
+        [self presentViewController:[SampleAlertViewController new] animated:YES completion:nil];
+    }
 }
 
 @end
