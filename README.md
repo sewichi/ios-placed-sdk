@@ -15,7 +15,7 @@ $ gem install cocoapods
 ```
 
 To integrate the Placed SDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
-```
+```ruby
 pod 'Placed', :git => 'https://github.com/placed/ios-placed-sdk.git'
 ```
 Then, run the following command:
@@ -58,13 +58,19 @@ For an example of the opt-in dialog and location permission prompt, please refer
 
 ## Usage
 
-1. Add `#import <Placed/PlacedAgent.h>` to your main AppDelegate.
+1. Add `[PlacedAgent createWithAppKey:andDelegate:]` call to your `AppDelegate`. Optionally, you may provide a `PlacedAgentDelegate` to this method but it is not required.
+```objc
+#import <Placed/PlacedAgent.h>
 
-2. Initialize the agent in your AppDelegate's `application:didFinishLaunchingWithOptions:`.
+@implementation AppDelegate
 
-    - Call `[PlacedAgent createWithAppKey:@"<Application Key>" andDelegate:nil]` providing the app key you received from Placed. Optionally, you may provide a `PlacedAgentDelegate` to this method but it is not required.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   // Initialize Placed SDK
+  [PlacedAgent createWithAppKey:@"<Application Key>" andDelegate:nil]
+}
+```
 
-3. Once you've gathered express consent to collect user data, call `[PlacedAgent registerUser]` to register a new user for location collection by the Placed SDK. This method should only be called once in the user's lifecycle. You may find the method `[PlacedAgent isUserRegistered]` useful for checking if `registerUser` has already been called.
+2. Once you've gathered express consent to collect user data, call `[PlacedAgent registerUser]` to register a new user for location collection by the Placed SDK. This method should only be called once in the user's lifecycle. You may find the method `[PlacedAgent isUserRegistered]` useful for checking if `registerUser` has already been called.
 
 ## How to join
 Please contact your Placed representative to find out how to register your account. If you do not have a representative yet, please email [affiliate@placed.com](mailto:affiliate@placed.com).
