@@ -59,16 +59,16 @@ For an example of the opt-in dialog and location permission prompt, please refer
 ## Usage
 
 1. Add `[PlacedAgent createWithAppKey:andDelegate:]` call to your `AppDelegate`. Optionally, you may provide a `PlacedAgentDelegate` to this method but it is not required.
-```objc
-#import <Placed/PlacedAgent.h>
+    ```objc
+    #import <Placed/PlacedAgent.h>
 
-@implementation AppDelegate
+    @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   // Initialize Placed SDK
-  [PlacedAgent createWithAppKey:@"<Application Key>" andDelegate:nil]
-}
-```
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        // Initialize Placed SDK
+        [PlacedAgent createWithAppKey:@"<Application Key>" andDelegate:nil]
+    }
+    ```
 
 2. Once you've gathered express consent to collect user data, call `[PlacedAgent registerUser]` to register a new user for location collection by the Placed SDK. This method should only be called once in the user's lifecycle. You may find the method `[PlacedAgent isUserRegistered]` useful for checking if `registerUser` has already been called.
 
