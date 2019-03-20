@@ -54,4 +54,7 @@
  */
 + (void)logCrash:(NSDate *)timestamp;
 
++ (void)changeOptInDialogThemeColor:(UIColor*)color;
+
++ (void)showOptInDialogFromPresentingView:(UIViewController *)presentingView;
 @end
